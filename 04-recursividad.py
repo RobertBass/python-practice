@@ -7,13 +7,32 @@ def factorial(n):
 print(factorial(5))
 
 
-def fibo(a = 0, b = 1, limit = 20):
-    f = [a, b]
-    for i in range(limit):
-        c = a + b
-        f.append(c)
-        a = b
-        b = c
+# FIBONACCI CON ITERACIONES
+def fibo(limit = 10):
+    f = []
+    for i in range(limit+1):
+        if len(f) < 2:
+            f.append(i)
+        else:
+            f.append(f[i-1] + f[i-2])
     print(f)
 
-fibo(limit = 30)
+
+# FIBONACCI RECURSIVO
+f2 = []
+def fiboRec(c = 0, n = 0, limit = 10):
+    if c <= limit:
+        if len(f2) < 2:
+            f2.append(n)
+            n += 1
+            c += 1
+            fiboRec(c, n)
+        else:
+            f2.append(f2[c-2] + f2[c-1])
+            c += 1
+            fiboRec(c)
+
+    
+fibo()
+fiboRec()
+print(f2)
