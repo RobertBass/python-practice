@@ -30,4 +30,4 @@ print(employee.salary)
 #employee.salary = -1000  
 
 # Eliminar el salario
-del employee.salary  
+del employee.salary
